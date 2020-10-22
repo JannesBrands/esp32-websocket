@@ -17,6 +17,9 @@ This program is free software: you can redistribute it and/or modify
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+/*
+Forked by Jannes Brands to avoid FreeRTOS Problems*/
+
 #include "websocket_server.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
