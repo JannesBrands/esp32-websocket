@@ -294,23 +294,17 @@ int ws_server_remove_all() {
 // The following functions are already written below, but without the mutex.
 
 int ws_server_send_text_client(int num,char* msg,uint64_t len) {
-  xSemaphoreTake(xwebsocket_mutex,portMAX_DELAY);
   int ret = ws_server_send_text_client_from_callback(num, msg, len);
-  xSemaphoreGive(xwebsocket_mutex);
   return ret;
 }
 
 int ws_server_send_text_clients(char* url,char* msg,uint64_t len) {
-  xSemaphoreTake(xwebsocket_mutex,portMAX_DELAY);
   int ret = ws_server_send_text_clients_from_callback(url, msg, len);
-  xSemaphoreGive(xwebsocket_mutex);
   return ret;
 }
 
 int ws_server_send_text_all(char* msg,uint64_t len) {
-  xSemaphoreTake(xwebsocket_mutex,portMAX_DELAY);
   int ret = ws_server_send_text_all_from_callback(msg, len);
-  xSemaphoreGive(xwebsocket_mutex);
   return ret;
 }
 
